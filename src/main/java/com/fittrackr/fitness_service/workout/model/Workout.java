@@ -29,7 +29,6 @@ public class Workout {
         public void setId(Long id){
                 this.id = id;
         }
-
         public Long getId() {
                 return id;
         }
@@ -37,7 +36,6 @@ public class Workout {
         public void setType(WorkoutType type) {
                 this.type = type;
         }
-
         public WorkoutType getType() {
                 return type;
         }
@@ -45,7 +43,6 @@ public class Workout {
         public void setDurationMinutes( int durationMinutes ){
                 this.durationMinutes = durationMinutes;
         }
-
         public int getDurationMinutes() {
                 return durationMinutes;
         }
@@ -53,8 +50,5 @@ public class Workout {
         public void setDate(LocalDate date) {
                 this.date = date;
         }
-
-        public LocalDate getDate() {
-                return date;
-        }
+        public LocalDate getDate() { return date; }
 }

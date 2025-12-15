@@ -1,0 +1,5 @@
+com\fittrackr\fitness_service\workout\repository\WorkoutRepository.class
+com\fittrackr\fitness_service\workout\dto\WorkoutRequest.class
+com\fittrackr\fitness_service\workout\service\WorkoutService.class
+com\fittrackr\fitness_service\workout\controller\WorkoutController.class
+com\fittrackr\fitness_service\workout\dto\WorkoutResponse.class

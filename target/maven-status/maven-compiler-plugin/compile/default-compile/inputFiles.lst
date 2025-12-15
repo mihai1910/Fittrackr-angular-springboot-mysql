@@ -1,0 +1,8 @@
+E:\Projects\angular-training\fitness-service\src\main\java\com\fittrackr\fitness_service\FitnessServiceApplication.java
+E:\Projects\angular-training\fitness-service\src\main\java\com\fittrackr\fitness_service\workout\controller\WorkoutController.java
+E:\Projects\angular-training\fitness-service\src\main\java\com\fittrackr\fitness_service\workout\dto\WorkoutRequest.java
+E:\Projects\angular-training\fitness-service\src\main\java\com\fittrackr\fitness_service\workout\dto\WorkoutResponse.java
+E:\Projects\angular-training\fitness-service\src\main\java\com\fittrackr\fitness_service\workout\model\Workout.java
+E:\Projects\angular-training\fitness-service\src\main\java\com\fittrackr\fitness_service\workout\model\WorkoutType.java
+E:\Projects\angular-training\fitness-service\src\main\java\com\fittrackr\fitness_service\workout\repository\WorkoutRepository.java
+E:\Projects\angular-training\fitness-service\src\main\java\com\fittrackr\fitness_service\workout\service\WorkoutService.java

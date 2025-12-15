@@ -8,6 +8,7 @@ import com.fittrackr.fitness_service.workout.repository.WorkoutRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class WorkoutService {
@@ -36,4 +37,19 @@ public class WorkoutService {
 
         return response;
     }
+
+    public List<WorkoutResponse> getAllWorkouts() {
+        return workoutRepository.findAll()
+                .stream()
+                .map(workout -> {
+                    WorkoutResponse res = new WorkoutResponse();
+                    res.setId(workout.getId());
+                    res.setType(workout.getType().name());
+                    res.setDurationMinutes(workout.getDurationMinutes());
+                    res.setDate(workout.getDate().toString());
+                    return res;
+                })
+                .toList();
+    }
+
 }
