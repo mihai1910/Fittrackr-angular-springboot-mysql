@@ -59,34 +59,6 @@ It's like a personal trainer app but way simpler and I built it myself!
 - **Standalone Components** - Modern Angular approach
 - **Router Subscriptions** - Components reload data when you navigate back (makes it feel more "stateful")
 
-## Project Structure
-
-```
-angular-training/
-├── client/                 # Angular frontend
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── components/  # All the UI components
-│   │   │   │   ├── dashboard/
-│   │   │   │   ├── workouts/
-│   │   │   │   ├── workout-detail/
-│   │   │   │   ├── exercises/
-│   │   │   │   └── nav/
-│   │   │   ├── guards/       # Route guards
-│   │   │   ├── interceptors/ # HTTP interceptors
-│   │   │   ├── pipes/       # Custom pipes
-│   │   │   └── *.api.ts     # API service files
-│   │   └── styles.css       # Tailwind imports
-│   └── proxy.conf.json     # Proxy config for API calls
-│
-└── fitness-service/         # Spring Boot backend
-    └── src/main/java/
-        └── com/fittrackr/fitness_service/
-            ├── workout/      # Workout entity, service, controller
-            ├── exercise/     # Exercise entity, service, controller
-            └── statistics/   # Statistics service
-```
-
 ## How to Run This Thing
 
 ### Prerequisites
