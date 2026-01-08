@@ -41,15 +41,42 @@ public class WorkoutService {
     public List<WorkoutResponse> getAllWorkouts() {
         return workoutRepository.findAll()
                 .stream()
-                .map(workout -> {
-                    WorkoutResponse res = new WorkoutResponse();
-                    res.setId(workout.getId());
-                    res.setType(workout.getType().name());
-                    res.setDurationMinutes(workout.getDurationMinutes());
-                    res.setDate(workout.getDate().toString());
-                    return res;
-                })
+                .map(this::toResponse)
                 .toList();
+    }
+
+    public WorkoutResponse getWorkoutById(Long id) {
+        Workout workout = workoutRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Workout not found with id: " + id));
+        return toResponse(workout);
+    }
+
+    public WorkoutResponse updateWorkout(Long id, WorkoutRequest request) {
+        Workout workout = workoutRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Workout not found with id: " + id));
+        
+        workout.setType(WorkoutType.valueOf(request.getType().trim().toUpperCase()));
+        workout.setDurationMinutes(request.getDurationMinutes());
+        workout.setDate(LocalDate.parse(request.getDate()));
+        
+        Workout saved = workoutRepository.save(workout);
+        return toResponse(saved);
+    }
+
+    public void deleteWorkout(Long id) {
+        if (!workoutRepository.existsById(id)) {
+            throw new RuntimeException("Workout not found with id: " + id);
+        }
+        workoutRepository.deleteById(id);
+    }
+
+    private WorkoutResponse toResponse(Workout workout) {
+        WorkoutResponse res = new WorkoutResponse();
+        res.setId(workout.getId());
+        res.setType(workout.getType().name());
+        res.setDurationMinutes(workout.getDurationMinutes());
+        res.setDate(workout.getDate().toString());
+        return res;
     }
 
 }

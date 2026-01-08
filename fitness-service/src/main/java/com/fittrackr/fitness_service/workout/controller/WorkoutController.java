@@ -28,4 +28,18 @@ public class WorkoutController {
         return workoutService.getAllWorkouts();
     }
 
+    @GetMapping("/{id}")
+    public WorkoutResponse getWorkoutById(@PathVariable Long id) {
+        return workoutService.getWorkoutById(id);
+    }
+
+    @PutMapping("/{id}")
+    public WorkoutResponse updateWorkout(@PathVariable Long id, @RequestBody @Valid WorkoutRequest request) {
+        return workoutService.updateWorkout(id, request);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteWorkout(@PathVariable Long id) {
+        workoutService.deleteWorkout(id);
+    }
 }
